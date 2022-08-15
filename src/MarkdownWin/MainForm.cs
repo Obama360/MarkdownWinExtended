@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -14,16 +14,17 @@ namespace MarkdownWin
         private readonly Markdown _markdown;
         private readonly FileSystemWatcher _fileWatcher;
 
-        public MainForm()
+        public MainForm(string[] args)
         {
             InitializeComponent();
-            
+
             browser.DocumentCompleted += BrowserDocumentCompleted;
             browser.PreviewKeyDown += BrowserPreviewKeyDown;
+
             browser.AllowWebBrowserDrop = false;
             browser.IsWebBrowserContextMenuEnabled = false;
             browser.WebBrowserShortcutsEnabled = false;
-            //browser.AllowNavigation = false;
+            browser.AllowNavigation = true;
             browser.ScriptErrorsSuppressed = true;
 
             _markdown = new Markdown();
@@ -32,7 +33,24 @@ namespace MarkdownWin
             _fileWatcher.Changed += new FileSystemEventHandler(OnWatchedFileChanged);
 
             this.Disposed += new EventHandler(Watcher_Disposed);
-            browser.AllowWebBrowserDrop = false;
+            browser.AllowWebBrowserDrop = true;
+
+            //Open file from parameter if given
+            if (args.Length > 0)
+            {
+                
+                try
+                {
+                    RefreshPreview(args[0]);
+                } catch
+                {
+                    MessageBox.Show("Could not open requested markdown file", "failed to open", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (args.Length > 1)
+                {
+                    this.Text = args[1];
+                }
+            }
         }
 
         private void Watcher_Disposed(object sender, EventArgs e)
@@ -170,6 +188,27 @@ namespace MarkdownWin
         private void mnuAbout_Click(object sender, EventArgs e)
         {
             Process.Start("http://www.github.com/jpoehls/MarkdownWin");
+        }
+
+        private void toolStripMenuItemExtended_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.github.com/obama360/");
+        }
+
+        //replace link opening behaviour to be able to open relative .md files
+        private void browser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            if (!e.Url.ToString().Contains("res://") && !e.Url.ToString().Contains("about:blank"))
+            {
+                try
+                {
+                    RefreshPreview(e.Url.ToString().Replace("about:", ""));
+                    e.Cancel = true;
+                } catch
+                {
+                    e.Cancel = false;
+                }
+            }
         }
     }
 }
