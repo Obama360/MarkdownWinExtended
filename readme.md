@@ -1,5 +1,14 @@
-## MarkdownWin
+# MarkdownWinExtended
 
+### Extended?
+Yes i extended this fork with some handy features i needed for how i want to use this software.
+
+Extensions:
+* Command Line Arguments for opening markdown files and setting window title
+* Rewrote Navigation to support markdown files with relative paths
+* minor design changes
+
+# MarkdownWin
 *A [Markdown](http://daringfireball.net/projects/markdown/) editor with live-preview for Windows.*
 
 **Download the binary by tapping [right here](https://github.com/jpoehls/MarkdownWin/raw/master/dist/MarkdownWin.exe).**
