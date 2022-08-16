@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MarkdownWin")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MarkdownWinExtended")]
+[assembly: AssemblyDescription("Extended by Nico Braun")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Joshua Poehls")]
 [assembly: AssemblyProduct("MarkdownWin")]

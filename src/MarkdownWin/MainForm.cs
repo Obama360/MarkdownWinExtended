@@ -192,7 +192,7 @@ namespace MarkdownWin
 
         private void toolStripMenuItemExtended_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.github.com/obama360/");
+            Process.Start("https://github.com/Obama360/MarkdownWinExtended");
         }
 
         //replace link opening behaviour to be able to open relative .md files
