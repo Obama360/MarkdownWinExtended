@@ -1,7 +1,14 @@
 # MarkdownWinExtended
 
-### Extended?
+## Extended?
 Yes i extended this fork with some handy features i needed for how i want to use this software.
+
+### How to use CMD arguments
+You can either do:
+
+`MarkdownWin "path-to-md"` \
+or \
+`MarkdownWin "path-to-md" "window-title"`
 
 Extensions:
 * Command Line Arguments for opening markdown files and setting window title
