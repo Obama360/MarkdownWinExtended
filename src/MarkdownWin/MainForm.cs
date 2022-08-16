@@ -200,13 +200,27 @@ namespace MarkdownWin
         {
             if (!e.Url.ToString().Contains("res://") && !e.Url.ToString().Contains("about:blank"))
             {
-                try
+                if (e.Url.ToString().Contains("about:"))
                 {
-                    RefreshPreview(e.Url.ToString().Replace("about:", ""));
-                    e.Cancel = true;
-                } catch
+                    try
+                    {
+                        RefreshPreview(e.Url.ToString().Replace("about:", ""));
+                        e.Cancel = true;
+                    }
+                    catch
+                    {
+                        e.Cancel = false;
+                    }
+                } else
                 {
-                    e.Cancel = false;
+                    try
+                    {
+                        Process.Start(e.Url.ToString());
+                        e.Cancel = true;
+                    } catch
+                    {
+                        e.Cancel = false;
+                    }
                 }
             }
         }
