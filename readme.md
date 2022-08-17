@@ -27,7 +27,7 @@ So if the MarkdownWin is in a folder, in which is another folder called cool, in
 
 ### So what does it look like now?
 Well have a look:
-![New Preview](screenshot2.png)
+![New Preview](Screenshot2.png)
 
 ---
 
