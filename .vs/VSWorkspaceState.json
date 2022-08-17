@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\MarkdownWin"
   ],
-  "SelectedNode": "\\MarkdownWin.sln",
+  "SelectedNode": "\\src\\MarkdownWin\\MainForm.cs",
   "PreviewInSolutionExplorer": false
 }
