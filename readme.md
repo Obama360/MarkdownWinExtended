@@ -1,4 +1,5 @@
 # MarkdownWinExtended
+A perfect portable small program, for everyone to view your documentation on the fileserver. or whatever you want to use it for.
 
 ## Extended?
 Yes, I extended this fork with some handy features I needed for how I want to use this software.
