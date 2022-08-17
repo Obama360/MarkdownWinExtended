@@ -17,7 +17,7 @@ You can either do:
 or \
 `MarkdownWin "path-to-md" "window-title"` to open md and set window title \
 or \
-`MarkdownWin "" "window-title"` to just set window title
+`MarkdownWin "" "window-title"` to just set window title (actually that doesn't work yet, but it might soon)
 
 (This command only works when the application name matches and you are in the same directory as the application. Unless you make a PATH entry or something)
 
