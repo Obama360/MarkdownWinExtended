@@ -28,6 +28,10 @@ So if the MarkdownWin is in a folder, in which is another folder called cool, in
 Well have a look:
 ![New Preview](Screenshot2.png)
 
+### How to get it?
+You could clone the repository into VisualStudio and compile it yourself.
+Or you could just [Download](https://github.com/Obama360/MarkdownWinExtended/raw/master/MarkdownWin.exe) the executable exe here.
+
 ---
 
 # MarkdownWin
